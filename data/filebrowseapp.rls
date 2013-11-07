@@ -1,0 +1,25 @@
+// localization strings for filebrowse
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+rls_string STRING_r_caption_filebrowse			"File Protector"
+rls_string STRING_r_short_caption_filebrowse	"File Protector"
+
+rls_string STRING_r_icon_file					"\\resource\\apps\\filebrowseapp.mbm"
+
+rls_string STRING_r_filebrowse_driveC			"Drive C:"
+rls_string STRING_r_filebrowse_driveD			"Drive D:"
+rls_string STRING_r_filebrowse_driveE			"Drive E:"
+
+rls_string STRING_r_filebrowse_loc_Open			"Open"
+rls_string STRING_r_filebrowse_loc_Encrypt      "Encrypt"
+rls_string STRING_r_filebrowse_loc_Decrypt      "Decrypt"
+rls_string STRING_r_filebrowse_loc_Exit			"Exit"
+
+rls_string STRING_r_information_note			"Open file,not support here."
+rls_string STRING_r_information_note_pw_no_equal "The two passwords are not equal."
+rls_string STRING_r_information_note_not_a_file  "Can't encrypt/decrypt a dir,please select a file."
+rls_string STRING_r_information_read_file_error  "File read error."
+rls_string STRING_r_information_end_encrypt      "End of encryption."
+rls_string STRING_r_information_end_decrypt 	 "End of decryption."

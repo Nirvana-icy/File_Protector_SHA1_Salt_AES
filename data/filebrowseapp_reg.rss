@@ -1,0 +1,19 @@
+// FileBrowse_reg.rss
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+#include <appinfo.rh>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xE80000A6
+
+
+RESOURCE APP_REGISTRATION_INFO
+  {
+  app_file = "filebrowseapp";
+  localisable_resource_file="\\resource\\apps\\filebrowseapp_loc";
+  }
+
+
+

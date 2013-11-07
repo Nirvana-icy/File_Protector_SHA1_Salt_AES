@@ -1,0 +1,57 @@
+// filebrowseapp.mmp
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+TARGET				filebrowseapp.exe
+TARGETTYPE			exe
+UID					0x100039CE 0xE80000A6
+	
+VENDORID			0
+
+#ifdef __WINSCW__
+CAPABILITY			AllFiles	//	AllFiles on emulator since no signing is required		
+#else
+CAPABILITY			NONE		//	No capabilities on hardware - otherwise SIS file signing is required
+#endif
+
+SOURCEPATH			..\src
+SOURCE				FileBrowseAppUi.cpp
+SOURCE				FileBrowseDocument.cpp
+SOURCE				FileBrowseApplication.cpp
+SOURCE				FileBrowseBaseView.cpp
+SOURCE				RFsEngine.cpp
+
+SYSTEMINCLUDE		\epoc32\include
+USERINCLUDE			..\inc ..\data
+
+SOURCEPATH			..\data
+
+START RESOURCE		filebrowseapp.rss
+TARGETPATH			\resource\apps
+HEADER
+END
+
+START RESOURCE		filebrowseapp_reg.rss
+TARGETPATH			\private\10003A3F\apps
+END
+
+START RESOURCE		filebrowseapp_loc.rss
+TARGETPATH			\resource\apps
+LANG				SC
+HEADER
+END
+
+START BITMAP    filebrowseapp.mbm
+TARGETPATH      \resource\apps
+HEADER
+SOURCEPATH      ..\gfx
+SOURCE          C16 folder.bmp
+SOURCE          C16 file.bmp
+SOURCE          8   mask.bmp
+END
+
+LIBRARY			euser.lib efsrv.lib cone.lib eikcore.lib eikcoctl.lib eikdlg.lib egul.lib eikctl.lib apparc.lib
+LIBRARY         bafl.lib charconv.lib hash.lib cryptography.lib
+LIBRARY         avkon.lib CommonEngine.lib
+

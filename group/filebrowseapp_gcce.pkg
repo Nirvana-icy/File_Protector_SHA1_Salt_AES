@@ -1,0 +1,29 @@
+; filebrowseapp_gcce.pkg
+;
+
+; Specify the languages - as previously supported
+; Languages
+; none - English only by default
+
+; List of localised vendor names - one per language. At least one must be provided (English [EN]). 
+; List must correspond to list of languages specified elsewhere in the .pkg
+%{"Symbian"}
+
+; The non-localised, globally unique vendor name (mandatory)
+:"Symbian"
+
+; Package header
+; Name, UID3, Major, Minor, Build, Package-type
+#{"File Protector"}, (0xE80000A6), 1, 0, 0, TYPE=SA
+
+; ProductID for S60 3.0
+; Product/platform version UID, Major, Minor, Build, Product ID
+[0x101F7961], 0, 0, 0, {"S60ProductID"}
+
+; Files to install for my directory application
+; If you have changed the default SDK installation path than you also need to change these paths.
+"\S60\devices\S60_5th_Edition_SDK_v1.0\epoc32\release\gcce\urel\filebrowseapp.exe"-"!:\sys\bin\filebrowseapp.exe"
+"\S60\devices\S60_5th_Edition_SDK_v1.0\epoc32\data\Z\Resource\Apps\filebrowseapp.rsc"-"!:\Resource\Apps\filebrowseapp.rsc"
+"\S60\devices\S60_5th_Edition_SDK_v1.0\epoc32\data\Z\Resource\Apps\filebrowseapp_loc.rsc"-"!:\Resource\Apps\filebrowseapp_loc.rsc"
+"\S60\devices\S60_5th_Edition_SDK_v1.0\epoc32\data\Z\Resource\Apps\filebrowseapp.mbm"-"!:\Resource\Apps\filebrowseapp.mbm"
+"\S60\devices\S60_5th_Edition_SDK_v1.0\epoc32\data\z\Private\10003a3f\Apps\filebrowseapp_reg.rsc"-"!:\private\10003a3f\import\apps\filebrowseapp_reg.rsc"

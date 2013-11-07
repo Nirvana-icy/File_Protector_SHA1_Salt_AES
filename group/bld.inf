@@ -1,0 +1,17 @@
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+PRJ_PLATFORMS
+// Specify the platforms your component needs to be built for here
+WINSCW
+GCCE
+
+
+// bld.inf
+prj_mmpfiles
+filebrowseapp.mmp
+
+prj_testmmpfiles
+..\test\FileBrowseTest.mmp
+

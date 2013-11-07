@@ -1,0 +1,20 @@
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+TARGET			FileBrowseTest.exe
+TARGETTYPE		exe
+UID				0
+
+SOURCEPATH		.
+SOURCE			FileBrowseTest.cpp
+
+SOURCEPATH		..\src
+SOURCE			rfsengine.cpp 
+
+USERINCLUDE		.
+SYSTEMINCLUDE	\epoc32\include ..\inc
+
+LIBRARY			euser.lib efsrv.lib
+
+

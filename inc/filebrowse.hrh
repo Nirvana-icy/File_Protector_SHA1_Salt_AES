@@ -1,0 +1,25 @@
+// FileBrowse.hrh
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+#ifndef __FILEBROWSE_HRH__
+#define __FILEBROWSE_HRH__
+
+enum TFileBrowseCommands
+  {
+  ECmdFileBrowseOpen = 1,
+  ECmdFileBrowseEncrypt = 2,
+  ECmdFileBrowseDecrypt = 3,
+  ECmdFileBrowseExit = 4
+  };
+
+enum TTestFormViewControls
+	{
+	ETestFormViewSecret = 1
+	};
+
+
+#endif // __FILEBROWSE_HRH__
+
+

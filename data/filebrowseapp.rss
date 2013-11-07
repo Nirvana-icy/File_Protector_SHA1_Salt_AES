@@ -1,0 +1,109 @@
+// FileBrowseapp.rss
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+
+NAME SFSB
+
+#include <eikon.rh>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "filebrowseapp.rls"
+#include "FileBrowse.hrh"
+
+RESOURCE RSS_SIGNATURE { }
+RESOURCE TBUF { buf = ""; }
+
+RESOURCE EIK_APP_INFO
+    {
+    menubar=r_filebrowse_menubar;
+    cba=R_AVKON_SOFTKEYS_OPTIONS_BACK;     
+    }
+
+RESOURCE MENU_BAR r_filebrowse_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_filebrowse_menu; txt="Nirvana.icy"; }
+        };
+    }
+
+RESOURCE MENU_PANE r_filebrowse_menu
+    {
+    items=
+        {
+        MENU_ITEM { command=ECmdFileBrowseOpen;					txt = STRING_r_filebrowse_loc_Open; },
+        MENU_ITEM { command=ECmdFileBrowseEncrypt;				txt = STRING_r_filebrowse_loc_Encrypt; },
+        MENU_ITEM { command=ECmdFileBrowseDecrypt;				txt = STRING_r_filebrowse_loc_Decrypt; },
+        MENU_ITEM { command=EAknCmdExit;						txt = STRING_r_filebrowse_loc_Exit; }
+		};
+	}
+
+
+RESOURCE LISTBOX r_filebrowse_baseview_listbox
+  {
+  flags = EAknListBoxSelectionList;
+  }
+  
+     
+//--Password setting page begin
+RESOURCE DIALOG r_set_pw_dlg
+	{
+	//EAknGeneralQueryFlags
+	flags = EGeneralQueryFlags;
+	buttons = R_AVKON_SOFTKEYS_OK_BACK;
+	items =
+		{
+			DLG_LINE
+				{
+				type = EAknCtQuery;
+				//EAknCtMultilineQuery;
+				id = EMultilineSecondLine;
+				control = AVKON_DATA_QUERY
+					{
+					layout = ECodeLayout;
+					label = "Enter password:";
+					control = NUMSECRETED
+						{
+						num_code_chars = 10;
+						};
+					};
+				}
+		};
+	}   
+
+RESOURCE DIALOG r_set_pw_dlg_for_confirm
+	{
+	//EAknGeneralQueryFlags
+	flags = EGeneralQueryFlags;
+	buttons = R_AVKON_SOFTKEYS_OK_BACK;
+	items =
+		{
+			DLG_LINE
+				{
+				type = EAknCtQuery;
+				//EAknCtMultilineQuery;
+				id = EMultilineSecondLine;
+				control = AVKON_DATA_QUERY
+					{
+					layout = ECodeLayout;
+					label = "Confirm password:";
+					control = NUMSECRETED
+						{
+						num_code_chars = 10;	//set max length of the key is 10
+						};
+					};
+				}
+		};
+	}   
+RESOURCE TBUF r_filebrowse_driveC { buf = STRING_r_filebrowse_driveC; }
+ RESOURCE TBUF r_filebrowse_driveD { buf = STRING_r_filebrowse_driveD; }
+  RESOURCE TBUF r_filebrowse_driveE { buf = STRING_r_filebrowse_driveE; }
+   RESOURCE TBUF r_filebrowse_icons { buf = STRING_r_icon_file; }
+    RESOURCE TBUF r_filebrowse_infonote { buf = STRING_r_information_note; } 
+     RESOURCE TBUF r_filebrowse_infonote_pw_no_equal { buf = STRING_r_information_note_pw_no_equal; } 
+      RESOURCE TBUF r_filebrowse_infonote_not_a_file { buf = STRING_r_information_note_not_a_file; }
+       RESOURCE TBUF r_filebrowse_infonote_read_file_error { buf = STRING_r_information_read_file_error; }
+        RESOURCE TBUF r_filebrowse_infonote_end_encrypt {buf = STRING_r_information_end_encrypt; }
+         RESOURCE TBUF r_filebrowse_infonote_end_decrypt {buf = STRING_r_information_end_decrypt; }
