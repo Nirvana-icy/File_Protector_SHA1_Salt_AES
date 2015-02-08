@@ -27,3 +27,5 @@ ASCII编码的口令+第一个程序预先定义的字符串+ASCII编码的口�
 循环读出文件内容到缓冲区。针对缓冲区中的数据进行AES加密运算，之后直接就地将加密后的密文数据块写回文件中原来明文数据块的位置。
 由于采用了密文就地覆盖原明文的方法，这样可以避免攻击者使用磁盘恢复工具	将原文件恢复出来。
 这个模块中的AES加密算法是由Symbian附加的密码算法库支持。File Protector中使用的AES的具体情况为，密钥取值128位，数据块大小128位。针对循环读取文件的最后一块可能不足128位，采取填充0的方法使其达到128位的分组长度。这样在加密后，文件的大小会有小于128位的增长。在解密时程序去掉填充的字符，文件的长度恢复原值。
+
+![image](https://raw.githubusercontent.com/Nirvana-icy/Touch_Signal_of_Android_Device_Touch_Screen/master/Touch_Signal/symbian.png)
